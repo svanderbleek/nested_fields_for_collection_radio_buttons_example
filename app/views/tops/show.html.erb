@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Top <%= @top.id %></h1>
+<% @top.nesteds.each do |nested| %>
+  <h2>Nested <%= nested.id %></h2>
+  <h3>Assign <%= nested.assign.id %></h2>
+<% end %>
+
+<%= link_to 'Edit', edit_top_path(@top) %> |
+<%= link_to 'Back', tops_path %>

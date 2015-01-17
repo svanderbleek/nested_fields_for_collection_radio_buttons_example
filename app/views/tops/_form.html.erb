@@ -1,0 +1,24 @@
+<%= form_for(@top) do |f| %>
+  <% if @top.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@top.errors.count, "error") %> prohibited this top from being saved:</h2>
+
+      <ul>
+      <% @top.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.fields_for(:nesteds) do |ff| %>
+    <div>
+      <%= ff.collection_radio_buttons(:assign_id, Assign.all, :id, :id) %>
+    </div>
+  <% end %>
+</div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
