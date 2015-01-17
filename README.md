@@ -1,4 +1,4 @@
-== Example
+## Example
 
 ```bash
   bundle install
